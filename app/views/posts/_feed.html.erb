@@ -1,0 +1,20 @@
+<div class="column">
+  <% @posts.each do | post | %>
+    <div class="box">
+      <article class="media">
+        <div class="media-left">
+          <figure class="image is-64x64">
+            <%= gravatar_image_tag(post.user.email, size: 64, alt: "#{post.user.fname} #{post.user.lname}") if post.user %>
+          </figure>
+        </div>
+        <div class="media-content">
+          <div class="content">
+            <strong><%= post.user ? "#{post.user.fname} #{post.user.lname} wrote:" : "Someone wrote:" %></strong><br><br>
+            <h4><%= post.title %></h4>
+            <p> <%= post.body%> </p>
+          </div>
+        </div>
+      </article>
+    </div>
+  <% end %>
+</div>
