@@ -2,51 +2,74 @@
   <div class="container">
     <div class="columns is-centered">
       <div class="column is-4">
-        <h2 class="title is-2">Sign up</h2>
+        <h2 class="title is-2">Create an Account</h2>
+        <%= simple_form_for(resource, as: resource_name, url: user_registration_path) do |f| %>
+          <%= f.error_notification %>
+          <div class="field">
+            <div class="control">
+              <%= f.input :fname,
+                          required: true,
+                          autofocus: true,
+                          input_html: { class: "input" },
+                          wrapper: false,
+                          label_html: { class: "label"} %>
+            </div>
+          </div>
+          <div class="field">
+            <div class="control">
+              <%= f.input :lname,
+                          required: true,
+                          input_html: { class: "input" },
+                          wrapper: false,
+                          label_html: { class: "label"} %>
+            </div>
+          </div>
+          <div class="field">
+            <div class="control">
+              <%= f.input :username,
+                          required: true,
+                          input_html: { class: "input" },
+                          wrapper: false,
+                          label_html: { class: "label"} %>
+            </div>
+          </div>
+          <div class="field">
+            <div class="control">
+              <%= f.input :email,
+                          required: true,
+                          input_html: { class: "input" },
+                          wrapper: false,
+                          label_html: { class: "label"} %>
+            </div>
+          </div>
+          <div class="field">
+            <div class="control">
+              <%= f.input :password,
+                          required: true,
+                          input_html: { class: "input" },
+                          wrapper: false,
+                          label_html: { class: "label"},
+                          hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+            </div>
+          </div>
+          <div class="field">
+            <div class="control">
+              <%= f.input :password_confirmation,
+                          required: true,
+                          input_html: { class: "input" },
+                          wrapper: false,
+                          label_html: { class: "label"} %>
+            </div>
+          </div>
+          <br>
 
-<%= simple_form_for(resource, as: resource_name, url: user_registration_path) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :fname,
-                required: true,
-                autofocus: true,
-                input_html: { class: "input" },
-                wrapper: false,
-                label_html: { class: "label"} %>
-    <%= f.input :lname,
-                required: true,
-                input_html: { class: "input" },
-                wrapper: false,
-                label_html: { class: "label"} %>
-    <%= f.input :username,
-                required: true,
-                input_html: { class: "input" },
-                wrapper: false,
-                label_html: { class: "label"} %>
-    <%= f.input :email,
-                required: true,
-                input_html: { class: "input" },
-                wrapper: false,
-                label_html: { class: "label"} %>
-    <%= f.input :password,
-                required: true,
-                input_html: { class: "input" },
-                wrapper: false,
-                label_html: { class: "label"},
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-    <%= f.input :password_confirmation,
-                required: true,
-                input_html: { class: "input" },
-                wrapper: false,
-                label_html: { class: "label"} %>
-  </div>
-  <br>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Sign Up", class: "button is-info is-medium" %>
-  </div>
-<% end %><br>
+          <div class="field">
+              <div class="control">
+                <%= f.button :submit, "Sign Up", class: "button is-info is-medium" %>
+              </div>
+            </div>
+          <% end %>
+          <br>
       
         <%= render "devise/shared/links" %>
       </div>

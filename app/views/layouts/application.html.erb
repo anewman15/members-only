@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>MembersOnly</title>
+    <title>MembersOnly - Roast'Em</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -14,7 +14,7 @@
     <nav class="navbar is-fixed-top is-info">
       <div class="navbar-brand">
         <%= link_to root_path, class: "navbar-item" do %>
-          <h1 class="title is-5">MembersOnly</h1>
+          <h1 class="title is-5">Roast'Em</h1>
         <% end %>      
         <div class="navbar-burger burger" data-target="navbarExample">
           <span></span>
@@ -26,7 +26,7 @@
         <div class="navbar-end mr-3">
           <div class="field is-grouped custom-centered">
             <p class="control">
-              <%= link_to  "Insult Someone", root_path, class: "button is-info is-inverted has-text-centered" %>
+              <%= link_to  "Roast Somebody", root_path, class: "button is-info is-inverted has-text-centered" %>
             </p>
             <% if user_signed_in? %>
               <p class="control">
