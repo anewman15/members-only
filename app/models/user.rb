@@ -7,4 +7,6 @@ class User < ApplicationRecord
   validates :fname, length: { in: 1..50 }
   validates :lname, length: { in: 1..50 }
   validates :username, length: { minimum: 3 }
+
+  has_many :posts
 end
