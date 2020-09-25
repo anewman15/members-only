@@ -1,25 +1,55 @@
-<h2>Sign up</h2>
+<div class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-4">
+        <h2 class="title is-2">Sign up</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: user_registration_path) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :email,
+    <%= f.input :fname,
                 required: true,
                 autofocus: true,
-                input_html: { autocomplete: "email" }%>
+                input_html: { class: "input" },
+                wrapper: false,
+                label_html: { class: "label"} %>
+    <%= f.input :lname,
+                required: true,
+                input_html: { class: "input" },
+                wrapper: false,
+                label_html: { class: "label"} %>
+    <%= f.input :username,
+                required: true,
+                input_html: { class: "input" },
+                wrapper: false,
+                label_html: { class: "label"} %>
+    <%= f.input :email,
+                required: true,
+                input_html: { class: "input" },
+                wrapper: false,
+                label_html: { class: "label"} %>
     <%= f.input :password,
                 required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
+                input_html: { class: "input" },
+                wrapper: false,
+                label_html: { class: "label"},
+                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
     <%= f.input :password_confirmation,
                 required: true,
-                input_html: { autocomplete: "new-password" } %>
+                input_html: { class: "input" },
+                wrapper: false,
+                label_html: { class: "label"} %>
   </div>
+  <br>
 
   <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
+    <%= f.button :submit, "Sign up", class: "button is-info is-medium" %>
   </div>
-<% end %>
-
-<%= render "users/shared/links" %>
+<% end %><br>
+      
+        <%= render "devise/shared/links" %>
+      </div>
+    </div>
+  </div>
+</div>

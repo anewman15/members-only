@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_25_091547) do
+ActiveRecord::Schema.define(version: 2020_09_25_123609) do
 
   create_table "posts", force: :cascade do |t|
     t.string "title"
@@ -21,9 +21,9 @@ ActiveRecord::Schema.define(version: 2020_09_25_091547) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "fname", null: false
-    t.string "lname", null: false
-    t.string "username", null: false
+    t.string "fname"
+    t.string "lname"
+    t.string "username"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
