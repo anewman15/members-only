@@ -1,4 +1,3 @@
-
 <article class="media box">
   <div class="media-content">       
     <%= simple_form_for @post do |f| %>
@@ -16,7 +15,7 @@
       <div class="field">
         <div class="control">
           <%= f.input :body,
-                      label: "Write an insult",
+                      label: "Write an insult:",
                       input_html: {class: "textarea"},
                       wrapper: false, label_html: { class: "label" },
                       placeholder: "Spit out what you've been hiding from your besties for years",
