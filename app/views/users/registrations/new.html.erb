@@ -2,13 +2,13 @@
   <div class="container">
     <div class="columns is-centered">
       <div class="column is-4">
-        <h2 class="title is-2">Create an Account</h2>
+        <h2 class="title is-2">Sign Up Now!</h2>
         <%= simple_form_for(resource, as: resource_name, url: user_registration_path) do |f| %>
           <%= f.error_notification %>
           <div class="field">
             <div class="control">
               <%= f.input :fname,
-                          label: "First Name"
+                          label: "First Name",
                           required: true,
                           autofocus: true,
                           input_html: { class: "input" },
@@ -19,7 +19,7 @@
           <div class="field">
             <div class="control">
               <%= f.input :lname,
-                          label: "Last Name"
+                          label: "Last Name",
                           required: true,
                           input_html: { class: "input" },
                           wrapper: false,
