@@ -14,21 +14,21 @@
  *= require_self
  */
 
- @import 'bulma';
+@import 'bulma';
 
 .navbar-brand .title {
   color: white;
 }
 
 .custom-centered {
- display: flex;
- justify-content: center;
- align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .image {
   border-radius: 50%;
-  
+
   img {
     border-radius: 50%;
   }
