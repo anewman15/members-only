@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
@@ -46,8 +44,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   # If you have extra params to permit, append them to the sanitizer.
-  # def configure_account_update_params
-  #   devise_parameter_sanitizer.permit(:account_update, keys: [:fname, :lname, :username, :email, :password, :password_confirmation, :current_password])
+  # def account_update_params
+  #   params.require(:user).permit(:fname, :lname, :username, :email, :password,
+  #   :password_confirmation, :current_password)
   # end
 
   # The path used after sign up.
