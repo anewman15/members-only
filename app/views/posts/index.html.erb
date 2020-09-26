@@ -1,7 +1,12 @@
 <div class="columns is-centered">
-    <section class="hero is-white">
-      <div class="hero-body">
-        <div class="container">
+  <section class="hero is-white">
+    <div class="hero-body">
+      <div class="container">
+        <% if user_signed_in? %>
+          <h1 class="title is-1 has-text-centered">
+            Roast'Em Back
+          </h1>
+        <% else %>
           <h1 class="title is-1 has-text-centered">
             Find Your Taunters
           </h1>
@@ -12,9 +17,10 @@
           <p class="control custom-centered">
             <%= link_to "Sign Up NOW", new_user_registration_path, class: "button is-large is-danger is-info has-text-centered" %>
           </p>
-        </div>
+        <% end %>
       </div>
-    </section>
+    </div>
+  </section>
 </div>
 <div class="columns is-centered">
   <div class="column is-half">

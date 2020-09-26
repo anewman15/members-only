@@ -2,13 +2,13 @@
     <div class="box">
       <article class="media">
         <div class="media-left">
-          <figure class="image is-64x64">
-            <%= gravatar_image_tag(post.user.email, size: 64, alt: "#{post.user.fname} #{post.user.lname}") if post.user %>
+          <figure class="image is-32x32">
+            <%= display_gravatar_image(post) %>
           </figure>
         </div>
         <div class="media-content">
           <div class="content">
-            <strong><%= post.user ? "#{post.user.fname} #{post.user.lname} wrote:" : "Someone wrote:" %></strong><br><br>
+            <strong><%= display_taunter_name(post) %></strong><br><br>
             <h4><%= post.title %></h4>
             <p> <%= post.body%> </p>
           </div>
