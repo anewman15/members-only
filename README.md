@@ -4,6 +4,9 @@ In this project, I created a members-only website where a user can taunt non-mem
 
 The main focus of this project to exercise authentication using Devise, Active Record Migrations, Validations and Associations.
 
+## App Screenshot
+![app screenshot](./app-screenshot.png)
+
 ## Built With
 
 * Ruby v 2.7.1
