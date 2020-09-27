@@ -1,0 +1,18 @@
+<% @posts.each do | post | %>
+    <div class="box">
+      <article class="media">
+        <div class="media-left">
+          <figure class="image is-32x32">
+            <%= display_gravatar_image(post) %>
+          </figure>
+        </div>
+        <div class="media-content">
+          <div class="content">
+            <strong><%= display_taunter_name(post) %></strong><br><br>
+            <h4><%= post.title %></h4>
+            <p> <%= post.body%> </p>
+          </div>
+        </div>
+      </article>
+    </div>
+  <% end %>
