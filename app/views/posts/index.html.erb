@@ -1,27 +1,5 @@
-<div class="columns is-centered">
-  <section class="hero is-white">
-    <div class="hero-body">
-      <div class="container">
-        <% if user_signed_in? %>
-          <h1 class="title is-1 has-text-centered">
-            Roast'Em Back
-          </h1>
-        <% else %>
-          <h1 class="title is-1 has-text-centered">
-            Find Your Taunters
-          </h1>
-          <h2 class="subtitle is-3 has-text-centered">
-            And Roast'Em Back
-          </h2>
-          <br>
-          <p class="control custom-centered">
-            <%= link_to "Sign Up NOW", new_user_registration_path, class: "button is-large is-danger is-info has-text-centered" %>
-          </p>
-        <% end %>
-      </div>
-    </div>
-  </section>
-</div>
+
+  <%= render 'posts/hero' %>
 <div class="columns is-centered">
   <div class="column is-half">
     <%= render 'posts/form' %>
