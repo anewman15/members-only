@@ -11,52 +11,8 @@
   </head>
 
   <body class="has-navbar-fixed-top">
-    <nav class="navbar is-fixed-top is-primary">
-      <div class="navbar-brand">
-        <%= link_to root_path, class: "navbar-item" do %>
-          <h1 class="title is-5">Roast'Em</h1>
-        <% end %>      
-        <div class="navbar-burger burger" data-target="navbarExample">
-          <span></span>
-          <span></span>
-          <span></span>        
-        </div>
-      </div>
-      <div id="navbarExample" class="navbar-menu">
-        <div class="navbar-end mr-3">
-          <div class="field is-grouped custom-centered">
-            <p class="control">
-              <%= link_to  "Roast Somebody", root_path, class: "button is-danger is-info has-text-centered" %>
-            </p>
-            <% if user_signed_in? %>
-              <p class="control">
-                <span><%= "#{current_user.fname} #{current_user.lname}" %></span>
-              </p>
-              <p class="control">
-                <%= link_to  "Logout", destroy_user_session_path, method: :delete, class: "button is-primary" %>
-              </p>
-            <% else %>
-              <p class="control">
-                <%= link_to  "Log In", new_user_session_path, class:"button is-primary" %>
-                </p>
-              <p class="control">
-                <%= link_to "Sign Up", new_user_registration_path, class: "button is-primary" %>
-              </p>
-            <% end %>
-          </div>
-        </div>
-      </div>
-    </nav>
-    <% if flash[:notice] %>
-    <div class="notification is-success global-notification">
-      <p class="notice"><%= notice %></p>
-    </div>
-    <% end %>
-    <% if flash[:alert] %>
-      <div class="notification is-warning global-notification">
-        <p class="notification"> <%= alert %> </p>
-      </div>
-    <% end %>
+    <%= render 'layouts/navbar'%>
+    <%= render 'layouts/flash_notice'%>
 
     <%= yield %>
   </body>
